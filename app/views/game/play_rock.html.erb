@@ -1,0 +1,10 @@
+<h1>Howdy!</h1>
+
+<p>You played rock</p>
+
+<p>The computer played <%= @computer_move %></p>
+
+<% if @computer_move == "rock"%>
+<img src="http://localhost:3000/assets/images/rock.png" width="200">
+<h3><%= @result %></h3>
+<%end%>
