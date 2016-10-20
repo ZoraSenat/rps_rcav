@@ -1,10 +1,116 @@
-<h1>Howdy!</h1>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>RPS Assignment</title>
 
-<p>You played rock</p>
+  <meta charset="utf-8">
 
-<p>The computer played <%= @computer_move %></p>
+  <!-- Connect to Bootstrap CSS -->
+  <link rel="stylesheet" href="assets/css/bootstrap.css">
 
-<% if @computer_move == "rock"%>
-<img src="http://localhost:3000/assets/images/rock.png" width="200">
-<h3><%= @result %></h3>
+  <!-- Connect to Font Awesome CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+  <!-- Connect to our own additional CSS -->
+  <link rel="stylesheet" href="assets/additional_styles.css">
+
+  <!-- Connect to jQuery (required before Bootstrap Javascript) -->
+  <!--<script src="assets/jquery-2.2.2.min.js"></script>
+
+  <!-- Connect to Bootstrap Javascript -->
+  <script src="assets/js/bootstrap.js"></script>
+
+  <!-- These meta tags make Bootstrap responsive and more accessible -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Connect to Google Web Fonts -->
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,300italic,400italic,600italic,700italic,800,800italic' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+  <div class="container">
+    <hr>
+    <div class="row">
+      <div class="col-sm-offset-2 col-sm-8">
+        <div class="text-center btn-group btn-group-justified">
+          <a href="/rock" class="btn btn-primary">Play Rock</a>
+          <a href="/paper" class="btn btn-info">Play Paper</a>
+          <a href="/scissors" class="btn btn-primary">Play Scissors</a>
+        </div>
+      </div>
+    </div>
+    <hr>
+
+    <div class="row">
+      <div class="col-md-4 col-md-offset-2">
+        <div class="panel panel-success">
+          <div class="panel-heading">
+            <h2 class="panel-title text-center">
+              <%= @user_move.capitalize =%>
+            </h2>
+          </div>
+          <div class="panel-body">
+            <img class="img-responsive" src="http://localhost:3000/assets/images/rock.png">
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="panel panel-danger">
+          <div class="panel-heading">
+            <h2 class="panel-title text-center">
+              <%= @computer_move.capitalize =%>
+            </h2>
+          </div>
+          <div class="panel-body">
+            <% if @computer_move == "rock"%>
+            <img class="img-responsive" src="http://localhost:3000/assets/images/rock.png">
+
+            <% else if @computer_move == "scissors"%>
+            <img class="img-responsive" src="http://localhost:3000/assets/images/scissors.png">
+
+            <% else %>
+            <img class="img-responsive" src="http://localhost:3000/assets/images/paper.png">
+
+            <%end%>
+            <%end%>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="container padding-inside-bottom-md">
+    <div class="footer col-sm-12 text-center">
+      <% if @result == "You won!"%>
+        <h1>
+      <span class="label label-success">
+          <%= @result %>
+      </span>
+        </h1>
+
+      <% else if @result == "You lost!"%>
+      <h1>
+    <span class="label label-danger">
+        <%= @result %>
+    </span>
+      </h1>
+
+      <% else %>
+      <h1>
+    <span class="label label-warning">
+        <%= @result %>
+    </span>
+      </h1>
+
+    </div>
+  </footer>
+
+</footer>
+
 <%end%>
+<%end%>
+</div>
+</body>
+</html>

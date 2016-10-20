@@ -1,22 +1,21 @@
 class GameController < ApplicationController
   #exception to capital letters (first letter of class must be capital letter)
   def user_plays_rock
+    @user_move = "rock"
+    @computer_move = ["rock","paper","scissors"].sample
 
-    moves = ["rock","paper","scissors"]
-
-    @computer_move = moves.sample
-    #use @-symbol to change variable from local variable to instance variable
-    if @computer_move = "rock"
+    if @computer_move == "rock"
       @result = "You tied!"
     else
       if @computer_move == "scissors"
-        @result = "You win!"
+        @result = "You won!"
       else
-        @result = "You lose!"
+        @result = "You lost!"
       end
     end
     render("game/play_rock.html.erb")
   end
+
 
   def user_plays_paper
 
