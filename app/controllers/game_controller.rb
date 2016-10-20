@@ -18,36 +18,32 @@ class GameController < ApplicationController
 
 
   def user_plays_paper
+    @user_move = "paper"
+    @computer_move = ["rock","paper","scissors"].sample
 
-    moves = ["rock","paper","scissors"]
-
-    @computer_move = moves.sample
-    #use @-symbol to change variable from local variable to instance variable
-    if @computer_move = "paper"
+    if @computer_move == "paper"
       @result = "You tied!"
     else
       if @computer_move == "rock"
-        @result = "You win!"
+        @result = "You won!"
       else
-        @result = "You lose!"
+        @result = "You lost!"
       end
     end
     render("game/play_paper.html.erb")
   end
 
   def user_plays_scissors
+    @user_move = "scissors"
+    @computer_move = ["rock","paper","scissors"].sample
 
-    moves = ["rock","paper","scissors"]
-
-    @computer_move = moves.sample
-    #use @-symbol to change variable from local variable to instance variable
-    if @computer_move = "scissors"
+    if @computer_move == "scissors"
       @result = "You tied!"
     else
       if @computer_move == "paper"
-        @result = "You win!"
+        @result = "You won!"
       else
-        @result = "You lose!"
+        @result = "You lost!"
       end
     end
     render("game/play_scissors.html.erb")
