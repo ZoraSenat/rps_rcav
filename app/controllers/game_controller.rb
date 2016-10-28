@@ -2,6 +2,8 @@ class GameController < ApplicationController
   #exception to capital letters (first letter of class must be capital letter)
 
   def user_plays_anything
+    # params {"move" => "anything"}
+
     @user_move = params["move"]
 
     @computer_move = ["rock","paper","scissors"].sample

@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+    # params {"move" => "anything"}
+
   get("/:move",{ :controller => "game", :action => "user_plays_anything" })
 
   # The priority is based upon order of creation: first created -> highest priority.
