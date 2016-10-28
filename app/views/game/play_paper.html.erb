@@ -64,17 +64,9 @@
             </h2>
           </div>
           <div class="panel-body">
-            <% if @computer_move == "rock"%>
-            <img class="img-responsive" src="http://localhost:3000/assets/images/rock.png">
 
-            <% else if @computer_move == "scissors"%>
-            <img class="img-responsive" src="http://localhost:3000/assets/images/scissors.png">
+            <img class="img-responsive" src="http://localhost:3000/assets/images/  <%= @user_move =%>.png">
 
-            <% else %>
-            <img class="img-responsive" src="http://localhost:3000/assets/images/paper.png">
-
-            <%end%>
-            <%end%>
           </div>
         </div>
       </div>
