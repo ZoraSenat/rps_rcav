@@ -13,7 +13,7 @@ class GameController < ApplicationController
         @result = "You lost!"
       end
     end
-    render("game/play_rock.html.erb")
+    render("game/play_anything.html.erb")
   end
 
 
@@ -30,7 +30,7 @@ class GameController < ApplicationController
         @result = "You lost!"
       end
     end
-    render("game/play_paper.html.erb")
+    render("game/play_anything.html.erb")
   end
 
   def user_plays_scissors
@@ -46,6 +46,6 @@ class GameController < ApplicationController
         @result = "You lost!"
       end
     end
-    render("game/play_scissors.html.erb")
+    render("game/play_anything.html.erb")
   end
 end
